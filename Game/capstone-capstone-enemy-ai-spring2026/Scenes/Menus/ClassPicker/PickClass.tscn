@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://di1mu75r04eie"]
+
+[ext_resource type="Script" uid="uid://dujdhdclnipof" path="res://Scenes/Menus/ClassPicker/pick_class.gd" id="1_0htbd"]
+[ext_resource type="Texture2D" uid="uid://cpp44tnr43i5v" path="res://Scenes/Menus/ClassPicker/Resources/Light_Progress.png" id="2_0thal"]
+[ext_resource type="Texture2D" uid="uid://dorsms8385dmg" path="res://Scenes/Menus/ClassPicker/Resources/Light_Progress_Ranger.png" id="3_al6hk"]
+[ext_resource type="Texture2D" uid="uid://caogcrpfthhl" path="res://Scenes/Menus/ClassPicker/Resources/Light_Progress_Pyro.png" id="5_vlut8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlut8"]
+bg_color = Color(0, 0.4392157, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g80jc"]
+bg_color = Color(0.83137256, 0, 0.19607843, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yoiek"]
+bg_color = Color(0, 0.69411767, 0.2509804, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="PickClass" type="Control" unique_id=173546029]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0htbd")
+
+[node name="BackGround" type="TextureRect" parent="." unique_id=1108797357]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+
+[node name="SelectClass" type="VBoxContainer" parent="." unique_id=150918105]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="SelectClassLabel" type="Label" parent="SelectClass" unique_id=762139770]
+layout_mode = 2
+text = "Select Player Class"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="SelectClass" unique_id=1730804407]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PlayerPickerHBox" type="HBoxContainer" parent="SelectClass/CenterContainer" unique_id=156828840]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SamuraiPanelContainer" type="PanelContainer" parent="SelectClass/CenterContainer/PlayerPickerHBox" unique_id=589855410]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vlut8")
+
+[node name="SamuraiVBox" type="VBoxContainer" parent="SelectClass/CenterContainer/PlayerPickerHBox/SamuraiPanelContainer" unique_id=887805666]
+layout_mode = 2
+
+[node name="SamuraiLabel" type="Label" parent="SelectClass/CenterContainer/PlayerPickerHBox/SamuraiPanelContainer/SamuraiVBox" unique_id=692120271]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Samurai"
+
+[node name="SamuraiImgButton" type="TextureButton" parent="SelectClass/CenterContainer/PlayerPickerHBox/SamuraiPanelContainer/SamuraiVBox" unique_id=1527879335]
+layout_mode = 2
+texture_normal = ExtResource("2_0thal")
+
+[node name="RangerPanelContainer" type="PanelContainer" parent="SelectClass/CenterContainer/PlayerPickerHBox" unique_id=1557609788]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_g80jc")
+
+[node name="RangerVBox" type="VBoxContainer" parent="SelectClass/CenterContainer/PlayerPickerHBox/RangerPanelContainer" unique_id=535757981]
+layout_mode = 2
+
+[node name="RangerLabel" type="Label" parent="SelectClass/CenterContainer/PlayerPickerHBox/RangerPanelContainer/RangerVBox" unique_id=1514052301]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Ranger"
+
+[node name="RangerImgButton" type="TextureButton" parent="SelectClass/CenterContainer/PlayerPickerHBox/RangerPanelContainer/RangerVBox" unique_id=1979224188]
+layout_mode = 2
+texture_normal = ExtResource("3_al6hk")
+
+[node name="PyroPanelContainer" type="PanelContainer" parent="SelectClass/CenterContainer/PlayerPickerHBox" unique_id=1730127694]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yoiek")
+
+[node name="PyroVBox" type="VBoxContainer" parent="SelectClass/CenterContainer/PlayerPickerHBox/PyroPanelContainer" unique_id=124616465]
+layout_mode = 2
+
+[node name="PyroLabel" type="Label" parent="SelectClass/CenterContainer/PlayerPickerHBox/PyroPanelContainer/PyroVBox" unique_id=853504378]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Pyromancer"
+
+[node name="PyroImgButton" type="TextureButton" parent="SelectClass/CenterContainer/PlayerPickerHBox/PyroPanelContainer/PyroVBox" unique_id=415648366]
+layout_mode = 2
+texture_normal = ExtResource("5_vlut8")
+
+[connection signal="pressed" from="SelectClass/CenterContainer/PlayerPickerHBox/SamuraiPanelContainer/SamuraiVBox/SamuraiImgButton" to="." method="_on_samurai_pressed"]
+[connection signal="pressed" from="SelectClass/CenterContainer/PlayerPickerHBox/RangerPanelContainer/RangerVBox/RangerImgButton" to="." method="_on_ranger_pressed"]
+[connection signal="pressed" from="SelectClass/CenterContainer/PlayerPickerHBox/PyroPanelContainer/PyroVBox/PyroImgButton" to="." method="_on_pyro_pressed"]

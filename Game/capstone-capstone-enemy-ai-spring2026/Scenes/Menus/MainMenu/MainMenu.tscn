@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://c3r7jo1lywlht"]
+
+[ext_resource type="Script" uid="uid://cpuk7usp5w3t5" path="res://Scenes/Menus/MainMenu/main_menu.gd" id="1_tt5f1"]
+[ext_resource type="Texture2D" uid="uid://p48pqd6vuhqi" path="res://Scenes/Menus/MainMenu/Capstone-Game.jpg" id="2_c3p6v"]
+[ext_resource type="Theme" uid="uid://cq6pqodbjllq2" path="res://Scenes/Menus/MainMenu/MainMenuButtons.tres" id="3_445kf"]
+
+[node name="MainMenu" type="Node2D" unique_id=990672282]
+script = ExtResource("1_tt5f1")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1516613870]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_c3p6v")
+expand_mode = 1
+
+[node name="PlayButton" type="Button" parent="." unique_id=328335193]
+offset_left = 213.0
+offset_top = 525.0
+offset_right = 438.0
+offset_bottom = 590.0
+theme = ExtResource("3_445kf")
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="." unique_id=824216794]
+offset_left = 721.0
+offset_top = 525.0
+offset_right = 946.0
+offset_bottom = 590.0
+theme = ExtResource("3_445kf")
+text = "Quit"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

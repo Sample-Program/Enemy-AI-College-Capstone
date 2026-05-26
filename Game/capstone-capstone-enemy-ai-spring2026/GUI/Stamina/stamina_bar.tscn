@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvrkdgw51jgw8"]
+
+[ext_resource type="Texture2D" uid="uid://d2ism3d16oawm" path="res://GUI/Stamina/StaminaBar.PNG" id="1_u6ni5"]
+[ext_resource type="Texture2D" uid="uid://b3r1yj27egro1" path="res://GUI/Stamina/StaminaProgressSmaller.PNG" id="2_cvsmf"]
+
+[sub_resource type="Theme" id="Theme_y1t33"]
+HBoxContainer/constants/separation = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dv0bo"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y1t33"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vx4oj"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et3gd"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="Theme" id="Theme_vx4oj"]
+ProgressBar/colors/font_color = Color(0, 0, 0, 1)
+ProgressBar/styles/background = SubResource("StyleBoxFlat_dv0bo")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_y1t33")
+ProgressBarHealth/colors/font_color = Color(0.19607843, 0.19607843, 0.19607843, 1)
+ProgressBarHealth/font_sizes/font_size = 10
+ProgressBarHealth/styles/background = SubResource("StyleBoxFlat_vx4oj")
+ProgressBarHealth/styles/fill = SubResource("StyleBoxFlat_et3gd")
+
+[node name="Stamina_Bar" type="HBoxContainer"]
+offset_right = 152.0
+offset_bottom = 49.0
+theme = SubResource("Theme_y1t33")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Stamina_Progress" type="TextureProgressBar" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+value = 100.0
+texture_under = ExtResource("1_u6ni5")
+texture_progress = ExtResource("2_cvsmf")
+texture_progress_offset = Vector2(43, 16)
+
+[node name="Stamina_Amount" type="ProgressBar" parent="Stamina_Progress"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -11.5
+offset_right = 36.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vx4oj")
+theme_override_font_sizes/font_size = 11
+step = 1.0
+value = 100.0

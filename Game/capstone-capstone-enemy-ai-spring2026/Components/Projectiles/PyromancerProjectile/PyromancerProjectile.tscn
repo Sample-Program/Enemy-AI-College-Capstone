@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://dn8crulhjh4ws"]
+
+[ext_resource type="Script" uid="uid://do5ciwdjx016y" path="res://Components/Projectiles/PyromancerProjectile/PyromancerProjectile.gd" id="1_rn2lf"]
+[ext_resource type="Texture2D" uid="uid://cu68ytyg7vy17" path="res://ArtAssets/Pyromancer 2D Pixel Art/Fire_projectile_left.png" id="1_v3we2"]
+[ext_resource type="Texture2D" uid="uid://cdaw844q3fytk" path="res://ArtAssets/Pyromancer 2D Pixel Art/Fire_projectile_right.png" id="2_rn2lf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v3we2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y68qx"]
+atlas = ExtResource("1_v3we2")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xkjs"]
+atlas = ExtResource("1_v3we2")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ck2k"]
+atlas = ExtResource("1_v3we2")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfi5l"]
+atlas = ExtResource("1_v3we2")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp5pd"]
+atlas = ExtResource("2_rn2lf")
+region = Rect2(0, 0, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxc27"]
+atlas = ExtResource("2_rn2lf")
+region = Rect2(47, 0, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o2u6"]
+atlas = ExtResource("2_rn2lf")
+region = Rect2(94, 0, 47, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tw5tj"]
+atlas = ExtResource("2_rn2lf")
+region = Rect2(141, 0, 47, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bepeb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y68qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xkjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ck2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfi5l")
+}],
+"loop": false,
+"name": &"Fly_Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp5pd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxc27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6o2u6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tw5tj")
+}],
+"loop": false,
+"name": &"Fly_Right",
+"speed": 5.0
+}]
+
+[node name="PyromancerProjectile" type="Area2D" unique_id=1254328351]
+script = ExtResource("1_rn2lf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=889734753]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_v3we2")
+
+[node name="projectile_animation" type="AnimatedSprite2D" parent="." unique_id=1199725726]
+sprite_frames = SubResource("SpriteFrames_bepeb")
+animation = &"Fly_Right"

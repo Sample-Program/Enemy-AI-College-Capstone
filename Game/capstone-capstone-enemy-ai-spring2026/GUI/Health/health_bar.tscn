@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://dv6plpjnw0a1p"]
+
+[ext_resource type="Texture2D" uid="uid://cq8vkl4ys6nw5" path="res://GUI/Health/HealthSmall.PNG" id="1_l583h"]
+[ext_resource type="Texture2D" uid="uid://ciweurlir4by2" path="res://GUI/Health/Prog2Smaller.PNG" id="2_3q2mn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ar3nf"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfhue"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="Theme" id="Theme_u764r"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_ar3nf")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_qfhue")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u764r"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eh8sw"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="Theme" id="Theme_c6xjp"]
+ProgressBar/colors/font_color = Color(0, 0, 0, 1)
+ProgressBar/styles/background = SubResource("StyleBoxFlat_u764r")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_eh8sw")
+
+[node name="Health_Bar" type="HBoxContainer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -53.0
+offset_right = 204.0
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Health_Progress" type="TextureProgressBar" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = SubResource("Theme_u764r")
+value = 100.0
+texture_under = ExtResource("1_l583h")
+texture_progress = ExtResource("2_3q2mn")
+texture_progress_offset = Vector2(48, 21)
+
+[node name="Health_Amount" type="ProgressBar" parent="Health_Progress"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -15.0
+offset_right = 41.5
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_c6xjp")
+theme_override_font_sizes/font_size = 13
+value = 100.0

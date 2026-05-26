@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://b40mcxak3jjkg"]
+
+[ext_resource type="Script" uid="uid://u1uprc00by2k" path="res://Entities/Player/PlayerBasic/PlayerBase.gd" id="1_vapx2"]
+[ext_resource type="Script" uid="uid://devip83lmxica" path="res://Entities/Player/PlayerBasic/SharedPlayer/PlayerAttack.gd" id="2_er6yw"]
+[ext_resource type="Script" uid="uid://bx18webjtag5m" path="res://Entities/Player/PlayerBasic/SharedPlayer/PlayerHealth.gd" id="3_tvgd2"]
+[ext_resource type="Script" uid="uid://cknfkmgj45sgq" path="res://Entities/Player/PlayerBasic/SharedPlayer/PlayerMovement.gd" id="4_a5iko"]
+[ext_resource type="Texture2D" uid="uid://esc6f66pykrr" path="res://ArtAssets/Effects/star.png" id="5_o8876"]
+[ext_resource type="Texture2D" uid="uid://f7dl6veovm5e" path="res://ArtAssets/Effects/burn.png" id="6_sh2q6"]
+[ext_resource type="Texture2D" uid="uid://ufyffef0im1t" path="res://ArtAssets/Effects/blood-drop.png" id="7_26g0b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vapx2"]
+radius = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ec3x"]
+size = Vector2(15, 23)
+
+[node name="PlayerBase" type="CharacterBody2D" unique_id=1186161775]
+z_index = 2
+platform_floor_layers = 4294967041
+script = ExtResource("1_vapx2")
+
+[node name="Head Hitbox" type="CollisionShape2D" parent="." unique_id=1100888891]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-1, -9)
+shape = SubResource("CircleShape2D_vapx2")
+disabled = true
+debug_color = Color(0, 0.540588, 0.95657, 0.42)
+
+[node name="Torso Hitbox" type="CollisionShape2D" parent="." unique_id=578050375]
+visible = false
+light_mask = 2
+visibility_layer = 2
+position = Vector2(-1.5, 7.5)
+shape = SubResource("RectangleShape2D_7ec3x")
+
+[node name="PlayerHealth" type="Node" parent="." unique_id=858174537]
+script = ExtResource("3_tvgd2")
+metadata/_custom_type_script = "uid://bx18webjtag5m"
+
+[node name="PlayerAttack" type="Node" parent="." unique_id=1989771730]
+script = ExtResource("2_er6yw")
+metadata/_custom_type_script = "uid://devip83lmxica"
+
+[node name="LightCooldown" type="Timer" parent="PlayerAttack" unique_id=352848379]
+
+[node name="HeavyCooldown" type="Timer" parent="PlayerAttack" unique_id=125120154]
+
+[node name="SkillCooldown" type="Timer" parent="PlayerAttack" unique_id=2110056331]
+
+[node name="PlayerMovement" type="Node" parent="." unique_id=297479649]
+script = ExtResource("4_a5iko")
+metadata/_custom_type_script = "uid://cknfkmgj45sgq"
+
+[node name="StatusIcons" type="Node2D" parent="." unique_id=1068268678]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="stun_sprite" type="Sprite2D" parent="StatusIcons" unique_id=1196310311]
+visible = false
+position = Vector2(13.602004, -81.15401)
+scale = Vector2(0.014070323, 0.015023453)
+texture = ExtResource("5_o8876")
+
+[node name="burn_sprite" type="Sprite2D" parent="StatusIcons" unique_id=135072345]
+visible = false
+position = Vector2(13.5, -81.5)
+scale = Vector2(0.015664248, 0.015440998)
+texture = ExtResource("6_sh2q6")
+
+[node name="bleed_sprite" type="Sprite2D" parent="StatusIcons" unique_id=1094536721]
+visible = false
+position = Vector2(13.118988, -81.341064)
+scale = Vector2(0.014136721, 0.014820312)
+texture = ExtResource("7_26g0b")

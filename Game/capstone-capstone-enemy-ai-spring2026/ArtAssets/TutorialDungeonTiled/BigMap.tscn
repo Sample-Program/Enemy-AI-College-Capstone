@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6b37vmdl1i0"]
+
+[ext_resource type="PackedScene" uid="uid://b1cnws0ompre3" path="res://ArtAssets/TutorialDungeonTiled/TutorialDungeon.tmx" id="1_5vtfk"]
+[ext_resource type="PackedScene" uid="uid://bxxsx2n3mfj60" path="res://Entities/Player/Player.tscn" id="2_55xil"]
+[ext_resource type="PackedScene" uid="uid://ji4j6o1xhd7m" path="res://GUI/main_gui.tscn" id="3_ex64k"]
+[ext_resource type="PackedScene" uid="uid://dptyhv3ip3cml" path="res://Scenes/Menus/PauseMenu/Pause_Menu.tscn" id="4_mu63v"]
+
+[node name="BigMap" instance=ExtResource("1_5vtfk")]
+
+[node name="Player" parent="." index="9" instance=ExtResource("2_55xil")]
+position = Vector2(3864, 3008)
+
+[node name="TheCamera" type="Camera2D" parent="Player" index="9"]
+z_index = 849
+zoom = Vector2(1.5, 1.5)
+
+[node name="GUI" parent="Player/TheCamera" index="0" instance=ExtResource("3_ex64k")]
+visibility_layer = 262144
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = 216.0
+offset_right = -384.0
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pause_Menu" parent="Player/TheCamera" index="1" instance=ExtResource("4_mu63v")]
+visible = false
+visibility_layer = 1048575
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="AIStatesReturn" type="Button" parent="Player/TheCamera" index="2"]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -376.0
+offset_top = 176.0
+offset_right = -315.0
+offset_bottom = 207.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Return"

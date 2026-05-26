@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bwway24amx66n"]
+
+[ext_resource type="PackedScene" uid="uid://hp2v66vc8ywj" path="res://Scenes/PathfindingTestMap.tmx" id="1_4vtfk"]
+[ext_resource type="Script" uid="uid://b221ai72ys44g" path="res://Scenes/TutorialDungeon.gd" id="2_sogon"]
+[ext_resource type="PackedScene" uid="uid://bxxsx2n3mfj60" path="res://Entities/Player_Old/Player.tscn" id="3_sogon"]
+[ext_resource type="PackedScene" uid="uid://ji4j6o1xhd7m" path="res://GUI/main_gui.tscn" id="5_6ty8d"]
+[ext_resource type="Script" uid="uid://diwv8ho1c405v" path="res://Scenes/Pathfinding.gd" id="5_x1eey"]
+[ext_resource type="PackedScene" uid="uid://dptyhv3ip3cml" path="res://Scenes/Menus/PauseMenu/Pause_Menu.tscn" id="7_1m85p"]
+[ext_resource type="PackedScene" uid="uid://ds7daf7vewgg3" path="res://Entities/Enemies/BasicEnemies/MushroomEnemies/MushroomEnemy.tscn" id="9_cqh4v"]
+[ext_resource type="PackedScene" uid="uid://ckw1sa67q3j5s" path="res://Entities/Enemies/BasicEnemies/BushEnemies/BushEnemy.tscn" id="10_xom50"]
+
+[node name="PathfindingTestMap" unique_id=1506679307 instance=ExtResource("1_4vtfk")]
+script = ExtResource("2_sogon")
+
+[node name="Structures" parent="." index="1" unique_id=399091984]
+light_mask = 2
+visibility_layer = 2
+collision_visibility_mode = 2
+
+[node name="Player" parent="." index="2" unique_id=2109360353 instance=ExtResource("3_sogon")]
+position = Vector2(632, 152)
+
+[node name="TheCamera" type="Camera2D" parent="Player" index="9" unique_id=69478281]
+z_index = 849
+zoom = Vector2(1.5, 1.5)
+
+[node name="GUI" parent="Player/TheCamera" index="0" unique_id=2137507816 instance=ExtResource("5_6ty8d")]
+visibility_layer = 262144
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.0
+offset_top = 208.0
+offset_right = -384.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pause_Menu" parent="Player/TheCamera" index="1" unique_id=423495321 instance=ExtResource("7_1m85p")]
+visible = false
+visibility_layer = 1048575
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+
+[node name="AIStatesReturn" type="Button" parent="Player/TheCamera" index="2" unique_id=217383424]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -376.0
+offset_top = 176.0
+offset_right = -315.0
+offset_bottom = 207.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Return"
+
+[node name="Pathfinding" type="Node2D" parent="." index="3" unique_id=1992700762]
+script = ExtResource("5_x1eey")
+
+[node name="BushEnemy" parent="." index="4" unique_id=1937847592 instance=ExtResource("10_xom50")]
+position = Vector2(224, 72)
+
+[node name="MushroomEnemy" parent="." index="5" unique_id=2085224882 instance=ExtResource("9_cqh4v")]
+position = Vector2(16, 248)

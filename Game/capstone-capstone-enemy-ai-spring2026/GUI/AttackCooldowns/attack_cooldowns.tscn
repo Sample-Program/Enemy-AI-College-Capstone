@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://bm4d5rg55m8r6"]
+
+[ext_resource type="Texture2D" uid="uid://dk530t2s8edwc" path="res://GUI/AttackCooldowns/Cooldown_Border.png" id="1_lpyr1"]
+[ext_resource type="Texture2D" uid="uid://cw5ebp2psfjp8" path="res://GUI/AttackCooldowns/Cooldown_Fill_BG.png" id="2_5df88"]
+[ext_resource type="LabelSettings" uid="uid://bfgfwuoab4f2e" path="res://GUI/AttackCooldowns/attack_cooldowns_labels.tres" id="2_ot7vv"]
+[ext_resource type="Texture2D" uid="uid://bdqh8tll7fput" path="res://GUI/AttackCooldownImages/Cooldown_Fill.png" id="2_xa880"]
+[ext_resource type="Texture2D" uid="uid://dvw58slixr7jy" path="res://GUI/AttackCooldownImages/Light_Progress.png" id="3_ot7vv"]
+[ext_resource type="Texture2D" uid="uid://bu25vdblydhbo" path="res://GUI/AttackCooldownImages/Heavy_Progress.png" id="4_5df88"]
+[ext_resource type="Texture2D" uid="uid://b8fuqbq4lglnp" path="res://GUI/AttackCooldownImages/Skill_Progress.png" id="5_d7yk2"]
+
+[sub_resource type="Theme" id="Theme_d7yk2"]
+
+[node name="AttackCooldowns" type="Control" unique_id=1597098570]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Cooldowns" type="HBoxContainer" parent="." unique_id=2028416205]
+layout_mode = 1
+offset_left = 8.0
+offset_top = -84.01599
+offset_right = 178.0
+offset_bottom = -6.015991
+
+[node name="Light" type="VBoxContainer" parent="Cooldowns" unique_id=215164159]
+layout_mode = 2
+
+[node name="InputLight" type="Label" parent="Cooldowns/Light" unique_id=1632780184]
+layout_mode = 2
+size_flags_horizontal = 4
+label_settings = ExtResource("2_ot7vv")
+
+[node name="LightProgress" type="TextureProgressBar" parent="Cooldowns/Light" unique_id=1584813144]
+layout_mode = 2
+theme = SubResource("Theme_d7yk2")
+value = 50.0
+texture_under = ExtResource("2_5df88")
+texture_over = ExtResource("1_lpyr1")
+texture_progress = ExtResource("2_xa880")
+
+[node name="LightImage" type="TextureRect" parent="Cooldowns/Light/LightProgress" unique_id=451585979]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.25
+offset_top = -28.5625
+offset_right = 28.25
+offset_bottom = 28.5625
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ot7vv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LightName" type="Label" parent="Cooldowns/Light" unique_id=236687158]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Light Attack"
+label_settings = ExtResource("2_ot7vv")
+
+[node name="Heavy" type="VBoxContainer" parent="Cooldowns" unique_id=1677628123]
+layout_mode = 2
+
+[node name="InputHeavy" type="Label" parent="Cooldowns/Heavy" unique_id=273094249]
+layout_mode = 2
+size_flags_horizontal = 4
+label_settings = ExtResource("2_ot7vv")
+
+[node name="HeavyProgress" type="TextureProgressBar" parent="Cooldowns/Heavy" unique_id=1950637423]
+layout_mode = 2
+value = 50.0
+texture_under = ExtResource("2_5df88")
+texture_over = ExtResource("1_lpyr1")
+texture_progress = ExtResource("2_xa880")
+
+[node name="HeavyImage" type="TextureRect" parent="Cooldowns/Heavy/HeavyProgress" unique_id=2089569687]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.25
+offset_top = -28.625
+offset_right = 28.25
+offset_bottom = 28.625
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_5df88")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HeavyName" type="Label" parent="Cooldowns/Heavy" unique_id=2142414374]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Heavy Attack"
+label_settings = ExtResource("2_ot7vv")
+
+[node name="Skill" type="VBoxContainer" parent="Cooldowns" unique_id=1395928031]
+layout_mode = 2
+
+[node name="InputSkill" type="Label" parent="Cooldowns/Skill" unique_id=1438696396]
+layout_mode = 2
+size_flags_horizontal = 4
+label_settings = ExtResource("2_ot7vv")
+
+[node name="SkillProgress" type="TextureProgressBar" parent="Cooldowns/Skill" unique_id=841664748]
+layout_mode = 2
+value = 50.0
+texture_under = ExtResource("2_5df88")
+texture_over = ExtResource("1_lpyr1")
+texture_progress = ExtResource("2_xa880")
+
+[node name="SkillImage" type="TextureRect" parent="Cooldowns/Skill/SkillProgress" unique_id=1449886897]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -27.984009
+offset_right = 29.5
+offset_bottom = 30.25
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_d7yk2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SkillName" type="Label" parent="Cooldowns/Skill" unique_id=959224609]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Skill Attack"
+label_settings = ExtResource("2_ot7vv")

@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://bd0txy7lr8jbh"]
+
+[ext_resource type="Script" uid="uid://hx0mgqif5nxd" path="res://Scenes/Menus/AIStates/debug_menu.gd" id="1_556co"]
+[ext_resource type="Script" uid="uid://mj5gs7jkfo2m" path="res://Scenes/Menus/AIStates/DebugVisualization/debug_visualization.gd" id="2_seybj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ttk31"]
+font_size = 19
+font_color = Color(1, 0.6666667, 0.26666668, 1)
+
+[node name="DebugMenu" type="Control" unique_id=1393159885]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1152.0
+offset_right = -1152.0
+grow_horizontal = 0
+script = ExtResource("1_556co")
+
+[node name="Background" type="Panel" parent="." unique_id=1919214494]
+layout_mode = 0
+
+[node name="MainVBox" type="VBoxContainer" parent="." unique_id=369822167]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Label" parent="MainVBox" unique_id=1364951269]
+layout_mode = 2
+text = "AI States Debug Menu"
+label_settings = SubResource("LabelSettings_ttk31")
+
+[node name="TopButtonRow" type="HBoxContainer" parent="MainVBox" unique_id=581353940]
+layout_mode = 2
+
+[node name="RefreshButton" type="Button" parent="MainVBox/TopButtonRow" unique_id=337890831]
+layout_mode = 2
+text = "Refresh List"
+
+[node name="SelectAllButton" type="Button" parent="MainVBox/TopButtonRow" unique_id=1698887152]
+layout_mode = 2
+text = "Select All"
+
+[node name="NPCSectionLabel" type="Label" parent="MainVBox" unique_id=1038121478]
+layout_mode = 2
+text = "Select NPC's to change state"
+
+[node name="NPCScroll" type="ScrollContainer" parent="MainVBox" unique_id=82683206]
+layout_mode = 2
+
+[node name="NPCListContainer" type="VBoxContainer" parent="MainVBox/NPCScroll" unique_id=987301370]
+layout_mode = 2
+
+[node name="Separator1" type="HSeparator" parent="MainVBox" unique_id=2031083169]
+layout_mode = 2
+
+[node name="StateDisplay" type="HBoxContainer" parent="MainVBox" unique_id=824702716]
+layout_mode = 2
+
+[node name="LeftLabel" type="RichTextLabel" parent="MainVBox/StateDisplay" unique_id=2121543354]
+layout_mode = 2
+
+[node name="RightLabel" type="RichTextLabel" parent="MainVBox/StateDisplay" unique_id=1170514187]
+layout_mode = 2
+
+[node name="Separator2" type="HSeparator" parent="MainVBox" unique_id=1004590807]
+layout_mode = 2
+
+[node name="StateButtonsRow" type="HBoxContainer" parent="MainVBox" unique_id=229667238]
+layout_mode = 2
+
+[node name="IdleButton" type="Button" parent="MainVBox/StateButtonsRow" unique_id=1266213343]
+layout_mode = 2
+text = "Idle"
+
+[node name="WanderButton" type="Button" parent="MainVBox/StateButtonsRow" unique_id=769247541]
+layout_mode = 2
+text = "Wander"
+
+[node name="ChaseButton" type="Button" parent="MainVBox/StateButtonsRow" unique_id=1796375523]
+layout_mode = 2
+text = "Chase"
+
+[node name="AttackButton" type="Button" parent="MainVBox/StateButtonsRow" unique_id=1657046004]
+layout_mode = 2
+text = "Attack"
+
+[node name="PauseButton" type="Button" parent="MainVBox" unique_id=1983183059]
+layout_mode = 2
+text = "Pause/Resume"
+
+[node name="CloseButton" type="Button" parent="MainVBox" unique_id=1985602490]
+layout_mode = 2
+text = "Close Menu"
+
+[node name="GraphButton" type="Button" parent="MainVBox" unique_id=686678629]
+layout_mode = 2
+text = "Graph States"
+
+[node name="Window" type="Window" parent="." unique_id=1716195794]
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+
+[node name="StatesGraph" type="GraphEdit" parent="Window" unique_id=357091271]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+show_zoom_label = true
+script = ExtResource("2_seybj")

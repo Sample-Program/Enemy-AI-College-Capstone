@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="PlayerClassData" format=3 uid="uid://bpwg6em4ygiw0"]
+
+[ext_resource type="Script" uid="uid://xy21yyuvgdvf" path="res://Entities/Player/PlayerBasic/ClassSpecific/Ranger.gd" id="1_murby"]
+[ext_resource type="PackedScene" uid="uid://c06r6angrassw" path="res://Entities/Player/PlayerClasses/Ranger.tscn" id="2_ome8r"]
+[ext_resource type="Script" uid="uid://ftrplsl6ug8w" path="res://Entities/Player/PlayerClasses/PlayerClassData.gd" id="3_kq70g"]
+
+[resource]
+script = ExtResource("3_kq70g")
+type = "Ranger"
+walk_speed = 200.0
+run_multiplier = 2.0
+max_hp = 160
+revive_time = 3.0
+health_tick_rate = 0.1
+health_tick_amount = 10
+max_stamina = 100.0
+stamina_burn = 2.0
+stamina_recovery = 4.0
+stamina_recovery_delay = 1.0
+light_damage = 10
+heavy_damage = 35
+skill_damage = 50
+light_cooldown = 2.0
+heavy_cooldown = 4.0
+skill_cooldown = 15.0
+attack_component_script = ExtResource("1_murby")
+player_scene = ExtResource("2_ome8r")
+metadata/_custom_type_script = "uid://ftrplsl6ug8w"

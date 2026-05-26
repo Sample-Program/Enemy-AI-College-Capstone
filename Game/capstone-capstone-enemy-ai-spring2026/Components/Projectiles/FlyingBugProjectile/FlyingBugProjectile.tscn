@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://cmbkgibj1jakb"]
+
+[ext_resource type="Script" uid="uid://bx6bo7gfmeah3" path="res://Components/Projectiles/FlyingBugProjectile/FlyingBugProjectile.gd" id="1_ku5gb"]
+[ext_resource type="Texture2D" uid="uid://ddd410lkdf3rv" path="res://ArtAssets/FlyingForestEnemies_PREMIUM/Enemy2/Enemy2-Projectile/Enemy2-ProjectileV3.png" id="2_cr8dq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ku5gb"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j83ws"]
+atlas = ExtResource("2_cr8dq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf6ta"]
+atlas = ExtResource("2_cr8dq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlx3g"]
+atlas = ExtResource("2_cr8dq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd1q8"]
+atlas = ExtResource("2_cr8dq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwtg1"]
+atlas = ExtResource("2_cr8dq")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6051u"]
+atlas = ExtResource("2_cr8dq")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jsgg3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j83ws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf6ta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlx3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd1q8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwtg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6051u")
+}],
+"loop": true,
+"name": &"projectile",
+"speed": 5.0
+}]
+
+[node name="Projectile" type="Area2D" unique_id=773083454]
+script = ExtResource("1_ku5gb")
+metadata/_custom_type_script = "uid://dw7clp6taj2di"
+
+[node name="projectile_collision" type="CollisionShape2D" parent="." unique_id=1325416726]
+shape = SubResource("CircleShape2D_ku5gb")
+
+[node name="projectile_animation" type="AnimatedSprite2D" parent="." unique_id=254080944]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_jsgg3")
+animation = &"projectile"
+frame = 1
+frame_progress = 0.21347412

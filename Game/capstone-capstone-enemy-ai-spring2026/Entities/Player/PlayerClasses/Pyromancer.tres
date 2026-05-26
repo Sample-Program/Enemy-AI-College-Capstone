@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="PlayerClassData" format=3 uid="uid://wsrtqi7pvhf4"]
+
+[ext_resource type="Script" uid="uid://ftrplsl6ug8w" path="res://Entities/Player/PlayerClasses/PlayerClassData.gd" id="1_xkdcr"]
+[ext_resource type="Script" uid="uid://b26662ueutbmq" path="res://Entities/Player/PlayerBasic/ClassSpecific/Pyromancer.gd" id="1_xxgqw"]
+[ext_resource type="PackedScene" uid="uid://bv4knas5idedt" path="res://Entities/Player/PlayerClasses/Pyromancer.tscn" id="2_c6i02"]
+
+[resource]
+script = ExtResource("1_xkdcr")
+type = "Pyromancer"
+walk_speed = 200.0
+run_multiplier = 2.0
+max_hp = 100
+revive_time = 3.0
+health_tick_rate = 0.1
+health_tick_amount = 15
+max_stamina = 80.0
+stamina_burn = 2.0
+stamina_recovery = 4.0
+stamina_recovery_delay = 1.0
+light_damage = 10
+heavy_damage = 25
+skill_damage = 40
+light_cooldown = 2.0
+heavy_cooldown = 8.0
+skill_cooldown = 20.0
+attack_component_script = ExtResource("1_xxgqw")
+player_scene = ExtResource("2_c6i02")

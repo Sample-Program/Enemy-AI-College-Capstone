@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="PlayerClassData" format=3 uid="uid://dhw5jlq4e6nhi"]
+
+[ext_resource type="Script" uid="uid://ds3sgekq8wef2" path="res://Entities/Player/PlayerBasic/ClassSpecific/Samurai.gd" id="1_2urgu"]
+[ext_resource type="PackedScene" uid="uid://jx1gsnef6fu6" path="res://Entities/Player/PlayerClasses/Samurai.tscn" id="2_js3nc"]
+[ext_resource type="Script" uid="uid://ftrplsl6ug8w" path="res://Entities/Player/PlayerClasses/PlayerClassData.gd" id="3_hr66l"]
+
+[resource]
+script = ExtResource("3_hr66l")
+type = "Sam"
+walk_speed = 200.0
+run_multiplier = 1.5
+max_hp = 200
+revive_time = 3.0
+health_tick_rate = 0.1
+health_tick_amount = 10
+max_stamina = 50.0
+stamina_burn = 2.0
+stamina_recovery = 2.0
+stamina_recovery_delay = 1.0
+light_damage = 15
+heavy_damage = 30
+skill_damage = 45
+light_cooldown = 1.0
+heavy_cooldown = 5.0
+skill_cooldown = 10.0
+attack_component_script = ExtResource("1_2urgu")
+player_scene = ExtResource("2_js3nc")
+metadata/_custom_type_script = "uid://ftrplsl6ug8w"

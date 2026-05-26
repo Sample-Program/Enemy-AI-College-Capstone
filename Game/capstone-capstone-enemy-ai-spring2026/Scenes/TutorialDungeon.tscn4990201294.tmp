@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6owvgv038jq0"]
+
+[ext_resource type="PackedScene" uid="uid://hp2v66vc8ywj" path="res://Scenes/PathfindingTestMap.tmx" id="1_4vtfk"]
+[ext_resource type="Script" uid="uid://b221ai72ys44g" path="res://Scenes/TutorialDungeon.gd" id="2_sogon"]
+[ext_resource type="PackedScene" uid="uid://bxxsx2n3mfj60" path="res://Entities/Player/Player.tscn" id="3_sogon"]
+[ext_resource type="PackedScene" uid="uid://c6s5r4co7g7ne" path="res://Entities/Enemies/TrainingDummy/TrainingDummy.tscn" id="5_qibtm"]
+[ext_resource type="PackedScene" uid="uid://ds7daf7vewgg3" path="res://Entities/Enemies/MushroomEnemies/MushroomEnemy.tscn" id="5_sogon"]
+[ext_resource type="Script" uid="uid://diwv8ho1c405v" path="res://Scenes/Pathfinding.gd" id="5_x1eey"]
+
+[node name="PathfindingTestMap" instance=ExtResource("1_4vtfk")]
+script = ExtResource("2_sogon")
+
+[node name="Structures" parent="." index="1"]
+light_mask = 2
+visibility_layer = 2
+collision_visibility_mode = 1
+
+[node name="Player" parent="." index="2" instance=ExtResource("3_sogon")]
+position = Vector2(504, 448)
+
+[node name="TrainingDummy" parent="." index="3" instance=ExtResource("5_qibtm")]
+position = Vector2(720, 176)
+
+[node name="Pathfinding" type="Node2D" parent="." index="4"]
+script = ExtResource("5_x1eey")
+
+[node name="MushroomEnemy" parent="." index="5" instance=ExtResource("5_sogon")]
+position = Vector2(592, 184)

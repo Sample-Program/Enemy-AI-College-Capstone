@@ -1,0 +1,10 @@
+# Godot 4.x generated files
+.import/
+
+# Godot editor-specific files
+.godot/
+.mono/
+
+# OS-specific junk
+.DS_Store
+Thumbs.db

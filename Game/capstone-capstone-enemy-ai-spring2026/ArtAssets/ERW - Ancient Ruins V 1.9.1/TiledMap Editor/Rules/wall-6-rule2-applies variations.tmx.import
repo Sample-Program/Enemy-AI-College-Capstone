@@ -1,0 +1,23 @@
+[remap]
+
+importer="YATI"
+type="PackedScene"
+uid="uid://c2417iteqd4y2"
+path="res://.godot/imported/wall-6-rule2-applies variations.tmx-833b5b74f3ccb00518503d791c4b8668.tscn"
+
+[deps]
+
+source_file="res://ArtAssets/ERW - Ancient Ruins V 1.9.1/TiledMap Editor/Rules/wall-6-rule2-applies variations.tmx"
+dest_files=["res://.godot/imported/wall-6-rule2-applies variations.tmx-833b5b74f3ccb00518503d791c4b8668.tscn"]
+
+[params]
+
+use_default_filter=false
+add_class_as_metadata=false
+add_id_as_metadata=false
+no_alternative_tiles=false
+map_wangset_to_terrain=false
+custom_data_prefix="data_"
+tiled_project_file=""
+post_processor=""
+save_tileset_to=""

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bsqc7wknk80vc"]
+
+[ext_resource type="Script" uid="uid://bbiyjdhy4qtj8" path="res://Components/Telegraphs/FireAOE/fire.gd" id="1_na4wn"]
+[ext_resource type="Script" uid="uid://bjkql7b4pj3dr" path="res://Components/Telegraphs/Telegraph.gd" id="2_xxjvh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uvl74"]
+
+[node name="Fire" type="Area2D" unique_id=2119775509]
+script = ExtResource("1_na4wn")
+
+[node name="telegraph" type="CollisionShape2D" parent="." unique_id=1573178760]
+shape = SubResource("CircleShape2D_uvl74")
+script = ExtResource("2_xxjvh")
+
+[node name="timer" type="Timer" parent="." unique_id=1559529262]

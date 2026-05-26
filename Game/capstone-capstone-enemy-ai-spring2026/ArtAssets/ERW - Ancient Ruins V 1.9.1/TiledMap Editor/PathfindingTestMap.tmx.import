@@ -1,0 +1,23 @@
+[remap]
+
+importer="YATI"
+type="PackedScene"
+uid="uid://b4mir5xgpty8x"
+path="res://.godot/imported/PathfindingTestMap.tmx-299a61e8dcffd7def65131a99c55ffde.tscn"
+
+[deps]
+
+source_file="res://ArtAssets/ERW - Ancient Ruins V 1.9.1/TiledMap Editor/PathfindingTestMap.tmx"
+dest_files=["res://.godot/imported/PathfindingTestMap.tmx-299a61e8dcffd7def65131a99c55ffde.tscn"]
+
+[params]
+
+use_default_filter=false
+add_class_as_metadata=false
+add_id_as_metadata=false
+no_alternative_tiles=false
+map_wangset_to_terrain=false
+custom_data_prefix="data_"
+tiled_project_file=""
+post_processor=""
+save_tileset_to=""

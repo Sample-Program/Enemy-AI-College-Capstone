@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://dptyhv3ip3cml"]
+
+[ext_resource type="Script" uid="uid://cl52ass0qibud" path="res://Scenes/Menus/PauseMenu/pause_menu.gd" id="1_xay0d"]
+
+[sub_resource type="Theme" id="Theme_fo4r2"]
+
+[node name="Pause_Menu" type="Control" unique_id=1981009236]
+visibility_layer = 524288
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fo4r2")
+script = ExtResource("1_xay0d")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=939025582]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = -121.0
+offset_right = 140.0
+offset_bottom = 165.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.23137255, 0.23137255, 0.23137255, 0.92156863)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2005456633]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -106.0
+offset_right = 126.0
+offset_bottom = 155.42969
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.99453133)
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Title" type="Label" parent="MarginContainer" unique_id=653880815]
+layout_mode = 2
+size_flags_vertical = 0
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1752190959]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 4
+
+[node name="MainMenu" type="Button" parent="MarginContainer/VBoxContainer" unique_id=705282324]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Main Menu"
+
+[node name="AIStates" type="Button" parent="MarginContainer/VBoxContainer" unique_id=305201519]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 4
+text = "AI States"
+
+[node name="Return" type="Button" parent="MarginContainer/VBoxContainer" unique_id=650333374]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Return"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=1004632406]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer2" unique_id=1319262691]
+visibility_layer = 524288
+layout_mode = 2
+text = "Quit Game"
+
+[node name="Main_Menu_Confirmation" type="ConfirmationDialog" parent="." unique_id=1123299929]
+oversampling_override = 1.0
+mode = 1
+initial_position = 1
+size = Vector2i(306, 100)
+ok_button_text = "Confirm"
+
+[node name="Quit_Menu_Confirmation" type="ConfirmationDialog" parent="." unique_id=2028980058]
+oversampling_override = 1.0
+mode = 1
+initial_position = 1
+size = Vector2i(249, 100)
+ok_button_text = "Confirm"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/AIStates" to="." method="_on_ai_states_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="canceled" from="Main_Menu_Confirmation" to="." method="_on_main_menu_confirmation_canceled"]
+[connection signal="confirmed" from="Main_Menu_Confirmation" to="." method="_on_main_menu_confirmation_confirmed"]
+[connection signal="canceled" from="Quit_Menu_Confirmation" to="." method="_on_quit_menu_confirmation_canceled"]
+[connection signal="confirmed" from="Quit_Menu_Confirmation" to="." method="_on_quit_menu_confirmation_confirmed"]

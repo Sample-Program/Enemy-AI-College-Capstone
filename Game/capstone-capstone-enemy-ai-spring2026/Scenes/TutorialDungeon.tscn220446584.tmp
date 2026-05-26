@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6owvgv038jq0"]
+
+[ext_resource type="PackedScene" uid="uid://hp2v66vc8ywj" path="res://Scenes/PathfindingTestMap.tmx" id="1_4vtfk"]
+[ext_resource type="PackedScene" uid="uid://bxxsx2n3mfj60" path="res://Entities/Player/Player.tscn" id="3_sogon"]
+[ext_resource type="PackedScene" uid="uid://ds7daf7vewgg3" path="res://Entities/Enemies/MeleeMushroom/MeleeMushroom.tscn" id="4_4vtfk"]
+[ext_resource type="PackedScene" uid="uid://c6s5r4co7g7ne" path="res://Entities/Enemies/TrainingDummy/TrainingDummy.tscn" id="5_qibtm"]
+
+[node name="PathfindingTestMap" instance=ExtResource("1_4vtfk")]
+
+[node name="Structures" parent="." index="1"]
+light_mask = 2
+visibility_layer = 2
+collision_visibility_mode = 1
+
+[node name="Player" parent="." index="2" instance=ExtResource("3_sogon")]
+position = Vector2(504, 448)
+
+[node name="TrainingDummy" parent="." index="3" instance=ExtResource("5_qibtm")]
+position = Vector2(600, 472)
+
+[node name="TrainingDummy2" parent="." index="4" instance=ExtResource("5_qibtm")]
+position = Vector2(584, 440)
+
+[node name="MeleeMushroomEnemy" parent="." index="5" instance=ExtResource("4_4vtfk")]
+position = Vector2(680, 152)

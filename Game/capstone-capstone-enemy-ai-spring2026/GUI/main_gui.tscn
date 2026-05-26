@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://ji4j6o1xhd7m"]
+
+[ext_resource type="Script" uid="uid://carwfksxqhq5p" path="res://GUI/main_gui.gd" id="1_07wqh"]
+[ext_resource type="PackedScene" uid="uid://bvrkdgw51jgw8" path="res://GUI/Stamina/stamina_bar.tscn" id="1_x01nw"]
+[ext_resource type="PackedScene" uid="uid://dv6plpjnw0a1p" path="res://GUI/Health/health_bar.tscn" id="2_07wqh"]
+[ext_resource type="PackedScene" uid="uid://bm4d5rg55m8r6" path="res://GUI/AttackCooldowns/attack_cooldowns.tscn" id="4_cwf2d"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+script = ExtResource("1_07wqh")
+
+[node name="Bars" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -107.0
+offset_right = 456.0
+
+[node name="Stamina_Bar" parent="Bars" instance=ExtResource("1_x01nw")]
+layout_mode = 2
+
+[node name="Health_Bar" parent="Bars" instance=ExtResource("2_07wqh")]
+layout_mode = 2
+
+[node name="AttackCooldowns" parent="." instance=ExtResource("4_cwf2d")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 587.0
+offset_top = 2.0
+offset_right = 587.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_vertical = 8
