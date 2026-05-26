@@ -7,6 +7,7 @@ This is a snapshot of the capstone project my two other group members and I got 
 ## Table of Contents
 
 - [Overview](#overview)
+- [Getting Started](#getting-started)
 - [Folder Structure](#folder-structure)
   - [Game](#game-folder)
   - [Proposals](#proposals-folder)
@@ -17,6 +18,12 @@ This is a snapshot of the capstone project my two other group members and I got 
 ## Overview
 
 This project was focused around different data structures used to control enemy AI and their pathfinding algorithms. Before the project started, I wrote a proposal for the CS faculty and had to do research on enemy AI in game development. Throughout the first semester, the primary focus of the project was to create enemies that use finite state machines and the A* (A-star) algorithm for pathfinding. During the second semester, we created enemies that use behavior trees, incorporated NavMesh into the project, and created a visualization tool to display the enemy AI.
+
+---
+
+## Getting Started
+
+To run this project, you will need Godot 3.6 or a later 3.x version. Godot 4 has not been tested, though it may work. Once you have a compatible version of Godot, import the Game folder and run the project normally (play button in the top right).
 
 ---
 
