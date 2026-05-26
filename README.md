@@ -23,7 +23,7 @@ This project was focused around different data structures used to control enemy 
 ## Folder Structure
 
 ```
-Game-NPC-College-Capstone/
+Enemy-AI-College-Capstone/
 ├── Game/
 │   └── ...
 ├── Proposals/
