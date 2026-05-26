@@ -1,0 +1,21 @@
+# Godot 4.x generated files
+.import/
+.godot/
+
+# Godot editor-specific files
+.godot/editor/
+.godot/imported/
+.godot/mono/
+.godot/shader_cache/
+
+# Project cache/configs that should not be versioned
+.godot/*_cache*
+.godot/*.cfg
+.godot/*.md5
+
+# OS-specific junk
+.DS_Store
+Thumbs.db
+
+# Art assets
+ArtAssets/
